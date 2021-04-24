@@ -1,28 +1,51 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app id="app">
+    <div id="nav">
+       <v-btn
+        to="/Signin"
+       >
+        Login
+      </v-btn> 
+       <v-btn
+        to="/Signup"
+       >
+        Signup
+      </v-btn> 
+    </div>
+    <router-view/>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+
+  data() {
+    return {
+    }
   }
 }
-</script>
+</script> 
+<style lang="scss">
+@import "../node_modules/@aasaam/noto-font/dist/font-face.css" ;
 
-<style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  font-family: 'aasaam-Noto';
+}
+
+#nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
 }
 </style>
